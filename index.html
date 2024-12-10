@@ -39,7 +39,7 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center position-relative" style="background-image: url(assets/img/bg-navbar.png);background-size: contain;">
+  <header id="header" class="header d-flex align-items-center fixed-top" style="background-image: url(assets/img/bg-navbar.png);background-size: cover;background-repeat: no-repeat;">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
@@ -50,28 +50,11 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active fw-bold">Home</a></li>
+          <li><a href="#hero" class="fw-bold">Home</a></li>
           <li><a href="#services-2" class="fw-bold">Our Product</a></li>
           <li><a href="#about" class="fw-bold">About Us</a></li>
           <li><a href="#testimonials" class="fw-bold">Testimonials</a></li>
           <li><a href="#recent-posts" class="fw-bold">Blog</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li> -->
           <li><a href="#footer" class="fw-bold">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -85,7 +68,7 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+      <div id="hero-carousel" class="carousel slide carousel-fade vh-100" data-bs-ride="carousel" data-bs-interval="5000">
 
         <div class="carousel-item active">
           <img src="assets/img/hero_1.jpg" alt="">
@@ -615,6 +598,36 @@
 
   <!-- Preloader -->
   <div id="preloader"></div>
+
+  <script>
+    // Select all navigation links
+  const navLinks = document.querySelectorAll("nav ul li a");
+
+  // Function to handle active class
+  function setActiveSection() {
+    let currentSection = null;
+
+    // Loop through sections to find the one in the viewport
+    document.querySelectorAll("section").forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        currentSection = section.id;
+      }
+    });
+
+    // Remove active class from all links
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${currentSection}`) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  // Listen for scroll events
+  window.addEventListener("scroll", setActiveSection);
+
+  </script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
