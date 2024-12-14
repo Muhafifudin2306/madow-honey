@@ -729,9 +729,6 @@ h6 {
   bottom: 15px; /* Jarak dari bawah */
   right: 15px; /* Jarak dari kanan */
   z-index: 1000; /* Selalu di atas */
-}
-
-.whatsapp-float a {
   display: block;
   width: 50px;
   height: 50px;
@@ -741,6 +738,44 @@ h6 {
   text-align: center;
   line-height: 50px;
 }
+
+
+
+.message-float {
+  position: fixed;
+  bottom: 22px; /* Jarak dari bawah */
+  right: 75px; /* Jarak dari kanan */
+  z-index: 1000; /* Selalu di atas */
+}
+
+.message-float a {
+  display: block;
+  /* width: 50px;
+  height: 50px; */
+  /* background-color: #25d366; */
+  border-radius: 10%;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  text-align: center;
+  line-height: 50px;
+}
+
+.cursor-pointer:hover{
+cursor: pointer !important;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1; /* Penuh terlihat */
+  }
+  50% {
+    opacity: 0; /* Tidak terlihat */
+  }
+}
+
+.message-float {
+  animation: blink 2s infinite; /* Efek berkedip setiap 3 detik */
+}
+
 
 /* .whatsapp-float a img {
   width: 40px;

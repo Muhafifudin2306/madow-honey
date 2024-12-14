@@ -549,12 +549,61 @@
   </footer>
 
   <!-- Scroll Top -->
-  <div class="whatsapp-float">
-      <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" title="Contact Us">
+  <div class="whatsapp-float cursor-pointer">
+      <!-- <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" title="Contact Us"> -->
+        <div data-bs-toggle="modal" data-bs-target="#exampleModal">
           <i class="bi bi-whatsapp text-white fs-4"></i>
-      </a>
+        </div>
+      <!-- </a> -->
   </div>
+    <div class="message-float bg-light py-1 rounded px-3 border text-black">
+      <span class="fw-bold">Contact Us</span>
+    </div>
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Contact Us</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-light">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="box-contact bg-white border p-3 rounded d-flex flex-md-column text-md-center">
+              <div class="image-contact mt-0 mt-md-3 me-3 me-md-0">
+                  <img src="assets/img/team/team-1.jpg" class="rounded-circle" width="125" alt="">
+              </div>
+              <div class="desc-contact mt-0 mt-md-4 mb-md-3">
+                <h6 class="fw-bold">Gian Gabriel</h6>
+                <h6>CTO</h6>
+                <a href="https://wa.me/6287889505330" target="_blank" rel="noopener">
+                  <button class="btn btn-success"><i class="bi bi-whatsapp text-white"></i> Contact Now</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="box-contact bg-white border p-3 rounded d-flex flex-md-column text-md-center">
+              <div class="image-contact mt-0 mt-md-3 me-3 me-md-0">
+                  <img src="assets/img/team/team-1.jpg" class="rounded-circle" width="125" alt="">
+              </div>
+              <div class="desc-contact mt-0 mt-md-4 mb-md-3">
+                <h6 class="fw-bold">Sriayu Wulandari</h6>
+                <h6>CMO</h6>
+                <a href="https://wa.me/6282324022654" target="_blank" rel="noopener">
+                  <button class="btn btn-success"><i class="bi bi-whatsapp text-white"></i> Contact Now</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   
   <!-- Preloader -->
   <div id="preloader"></div>
