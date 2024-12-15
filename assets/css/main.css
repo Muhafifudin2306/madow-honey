@@ -695,7 +695,7 @@ h6 {
   opacity: 0;
   right: 15px;
   bottom: 70px;
-  z-index: 99999;
+  z-index: 1000;
   /* background-color: var(--accent-color); */
   background-color: rgb(153, 118, 28) !important;
   width: 50px;
@@ -2370,7 +2370,7 @@ section,
 }
 
 .text-gold{
-  color: rgb(153, 118, 28) !important;
+  color: rgb(153, 118, 28);
 }
 
 .img-custom{
