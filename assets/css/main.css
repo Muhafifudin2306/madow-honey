@@ -2372,6 +2372,9 @@ section,
 .text-gold{
   color: rgb(153, 118, 28);
 }
+.text-gold-i{
+  color: rgb(153, 118, 28) !important;
+}
 
 .img-custom{
   width: 100% !important;
