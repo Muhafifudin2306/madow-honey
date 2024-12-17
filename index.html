@@ -143,7 +143,6 @@
                 "autoplay": {
                   "delay": 5000
                 },
-                "slidesPerView": "auto",
                 "pagination": {
                   "el": ".swiper-pagination",
                   "type": "bullets",
@@ -158,7 +157,7 @@
                     "slidesPerView": 1,
                     "spaceBetween": 40
                   },
-                  "1200": {
+                  "2000": {
                     "slidesPerView": 3,
                     "spaceBetween": 40
                   }
@@ -192,6 +191,7 @@
                   <h6 class="text-gold text-center mt-3 fw-bold">Accasia Honey</h6>
                 </div>
               </div>
+              
               <!-- <div class="swiper-slide">
                 <div class="service-item" data-bs-toggle="modal" data-bs-target="#accasiaModal">
                   <div class="service-item-contents">
@@ -332,7 +332,7 @@
         <div class="container">
 
           <div class="row" data-aos="fade-up">
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-6 mb-4">
               <div class="person">
                 <figure>
                   <img src="assets/img/team/team-1.jpg" alt="Image" class="img-fluid">
@@ -349,7 +349,7 @@
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-6 mb-4">
               <div class="person">
                 <figure>
                   <img src="assets/img/team/team-3.jpg" alt="Image" class="img-fluid">
@@ -366,7 +366,7 @@
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-6 mb-4">
               <div class="person">
                 <figure>
                   <img src="assets/img/team/team-1.jpg" alt="Image" class="img-fluid">
@@ -383,7 +383,7 @@
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-6 mb-4">
               <div class="person">
                 <figure>
                   <img src="assets/img/team/team-4.jpg" alt="Image" class="img-fluid">
@@ -400,7 +400,7 @@
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-6 mb-4">
               <div class="person">
                 <figure>
                   <img src="assets/img/team/team-1.jpg" alt="Image" class="img-fluid">
@@ -417,7 +417,7 @@
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-6 mb-4">
               <div class="person">
                 <figure>
                   <img src="assets/img/team/team-3.jpg" alt="Image" class="img-fluid">
@@ -467,10 +467,43 @@
 
             <p><a href="#" class="btn-cta">Get in touch</a></p>
           </div> -->
-          <h2 class="text-gold fw-bold" align="center">OUR EXPORT REACH</h2>
+          <sction id="support" class="mb-5 pb-5" data-aos="fade-up">
+            <h3 class="text-gold fw-bold">Supported By</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <p>We proudly collaborate with trusted institutions that support and enhance the quality of our products and services</p>
+                <ul>
+                  <li>Ministry of Trade (Kemendag)</li>
+                  <li>Ministry of Law and Human Rights (Kemenkumham)</li>
+                  <li>National Agency of Drug and Food Control (BPOM)</li>
+                  <li>Halal certification</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-6 mb-3">
+                    <img class="w-100 object-fit-contain" height="150" src="./assets/img/kemendag.png" alt="">
+                  </div>
+                  <div class="col-6 mb-3">
+                    <img class="w-100 object-fit-contain" height="150" src="./assets/img/kemenkumham.png" alt="">
+                  </div>
+                  <div class="col-6 mb-3">
+                    <img class="w-100 object-fit-contain" height="150" src="./assets/img/bpom.png" alt="">
+                  </div>
+                  <div class="col-6 mb-3">
+                    <img class="w-100 object-fit-contain" height="150" src="./assets/img/halal.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sction>
+          
+         
+          <div class="container section-title" data-aos="fade-up">
+            <h2 class="text-gold fw-bold mt-5">OUR EXPORT REACH</h2>
+          </div><!-- End Section Title -->
           <div class="box p-2" data-aos="fade-up">
-            <div id="map" style="position: relative; width: 100%; height: 500px;"></div>
-<svg id="map-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></svg>
+            <div id="map"></div>
 
           </div>
         </div>
@@ -1299,37 +1332,7 @@
   window.addEventListener("scroll", setActiveSection);
 
   </script>
-  <script>
-      function getPixelPosition(lat, lng) {
-    const map = document.getElementById("map");
-    const mapWidth = map.offsetWidth;
-    const mapHeight = map.offsetHeight;
-
-    const x = ((lng + 180) / 360) * mapWidth; // Hitung posisi x
-    const y = ((90 - lat) / 180) * mapHeight; // Hitung posisi y
-    return { x, y };
-  }
-
-  // Hubungkan lokasi dengan garis putus-putus
-  function drawDashedLine(lat1, lng1, lat2, lng2) {
-    const svg = document.getElementById("map-overlay");
-    const pos1 = getPixelPosition(lat1, lng1);
-    const pos2 = getPixelPosition(lat2, lng2);
-
-    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-    line.setAttribute("x1", pos1.x);
-    line.setAttribute("y1", pos1.y);
-    line.setAttribute("x2", pos2.x);
-    line.setAttribute("y2", pos2.y);
-    line.setAttribute("stroke", "black");
-    line.setAttribute("stroke-width", "2");
-    line.setAttribute("stroke-dasharray", "5,5");
-    svg.appendChild(line);
-  }
-
-  // Contoh menggambar garis antara lokasi
-  drawDashedLine(40.7128, -74.0060, 34.0522, -118.2437);
-</script>
+  
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
