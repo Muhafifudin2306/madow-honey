@@ -125,8 +125,6 @@
       </div>
 
     </section><!-- /Hero Section -->
-
-
     <section id="services-2" class="services-2 section">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -444,7 +442,9 @@
           </div> -->
           <h2 class="text-gold fw-bold" align="center">OUR EXPORT REACH</h2>
           <div class="box p-2" data-aos="fade-up">
-            <div id="map"></div>
+            <div id="map" style="position: relative; width: 100%; height: 500px;"></div>
+<svg id="map-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></svg>
+
           </div>
         </div>
       </div>
@@ -1272,6 +1272,37 @@
   window.addEventListener("scroll", setActiveSection);
 
   </script>
+  <script>
+      function getPixelPosition(lat, lng) {
+    const map = document.getElementById("map");
+    const mapWidth = map.offsetWidth;
+    const mapHeight = map.offsetHeight;
+
+    const x = ((lng + 180) / 360) * mapWidth; // Hitung posisi x
+    const y = ((90 - lat) / 180) * mapHeight; // Hitung posisi y
+    return { x, y };
+  }
+
+  // Hubungkan lokasi dengan garis putus-putus
+  function drawDashedLine(lat1, lng1, lat2, lng2) {
+    const svg = document.getElementById("map-overlay");
+    const pos1 = getPixelPosition(lat1, lng1);
+    const pos2 = getPixelPosition(lat2, lng2);
+
+    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    line.setAttribute("x1", pos1.x);
+    line.setAttribute("y1", pos1.y);
+    line.setAttribute("x2", pos2.x);
+    line.setAttribute("y2", pos2.y);
+    line.setAttribute("stroke", "black");
+    line.setAttribute("stroke-width", "2");
+    line.setAttribute("stroke-dasharray", "5,5");
+    svg.appendChild(line);
+  }
+
+  // Contoh menggambar garis antara lokasi
+  drawDashedLine(40.7128, -74.0060, 34.0522, -118.2437);
+</script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

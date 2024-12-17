@@ -1,13 +1,13 @@
-var simplemaps_worldmap_mapdata={
+var simplemaps_worldmap_mapdata = {
   main_settings: {
-   //General settings
-    width: "responsive", //'700' or 'responsive'
+    // General settings
+    width: "responsive",
     background_color: "#FFFFFF",
     background_transparent: "yes",
     border_color: "#ffffff",
     popups: "detect",
-    
-    //State defaults
+
+    // State defaults
     state_description: "State description",
     state_color: "#88A4BC",
     state_hover_color: "#3B729F",
@@ -15,59 +15,34 @@ var simplemaps_worldmap_mapdata={
     border_size: 1.5,
     all_states_inactive: "no",
     all_states_zoomable: "no",
-    
-    //Location defaults
+
+    // Location defaults
     location_description: "Location description",
-    location_color: "#5A3C02",
+    location_color: "#5A3C02", // No longer used for images
     location_opacity: 0.8,
     location_hover_opacity: 1,
     location_url: "",
-    location_size: 25,
-    location_type: "square",
-    location_image_source: "frog.png",
+    location_size: "35", // Adjust size for the image
+    location_type: "image", // Specify 'image' instead of 'square'
+    location_image_source: "apple-touch-icon.png", // Path to your image
     location_border_color: "#FFFFFF",
     location_border: 2,
     location_hover_border: 2.5,
     all_locations_inactive: "no",
     all_locations_hidden: "no",
-    
-    //Label defaults
-    label_color: "#d5ddec",
-    label_hover_color: "#d5ddec",
-    label_size: 22,
-    label_font: "Arial",
-    hide_labels: "no",
-   
-    //Zoom settings
-    zoom: "yes",
-    back_image: "no",
-    initial_back: "no",
-    initial_zoom: -1,
-    initial_zoom_solo: "no",
-    region_opacity: 1,
-    region_hover_opacity: 0.6,
-    zoom_out_incrementally: "yes",
-    zoom_percentage: 0.99,
-    zoom_time: 0.5,
-    
-    //Popup settings
-    popup_color: "white",
-    popup_opacity: 0.9,
-    popup_shadow: 1,
-    popup_corners: 5,
-    popup_font: "12px/1.5 Verdana, Arial, Helvetica, sans-serif",
-    popup_nocss: "no",
-    
-    //Advanced settings
+
+    // Other settings...
     div: "map",
     auto_load: "yes",
-    url_new_tab: "yes",
     images_directory: "default",
-    fade_time: 0.1,
-    link_text: "View Website",
-    state_image_url: "",
-    state_image_position: "",
-    location_image_url: ""
+  },
+  locations: {
+    "0": {
+      lat: 40.7128,
+      lng: -74.0060,
+      name: "New York City",
+      description: "Custom image location example"
+    }
   },
   state_specific: {
     AF: {
